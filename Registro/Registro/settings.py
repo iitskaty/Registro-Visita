@@ -52,12 +52,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Registro.urls'
 
-import os
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # 👈 carpeta global de templates
+        'DIRS': [BASE_DIR / 'Registro' / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

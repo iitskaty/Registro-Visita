@@ -18,3 +18,6 @@ def lista_visitas(request):
     hoy = timezone.now().date()
     visitas =Visita.objects.filter(hora_entrada_date=hoy)
     return render(request, "visita/lista.html", {"visitas":visitas})
+
+def inicio(request):
+    return render(request, 'inicio.html')
