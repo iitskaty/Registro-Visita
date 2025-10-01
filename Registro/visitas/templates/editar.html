@@ -1,9 +1,15 @@
 {% extends 'base.html' %}
+{% block title %}Editar Visita{% endblock %}
 {% block content %}
 <h2>Editar Visita</h2>
-<form method="POST">
+<form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn">Actualizar</button>
+    <label>Nombre:</label><br>
+    {{ form.nombre }}<br><br>
+    <label>Motivo:</label><br>
+    {{ form.motivo }}<br><br>
+    <label>Fecha:</label><br>
+    {{ form.fecha }}<br><br>
+    <button type="submit" style="background-color:#f3d6f0; color:#5c2a57; padding:8px 16px; border:none; border-radius:5px;">Actualizar</button>
 </form>
 {% endblock %}
