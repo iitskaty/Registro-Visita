@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Visitas</title>
+</head>
+<body>
+    <h1>Listado de Visitas</h1>
+
+    <nav>
+        <a href="{% url 'inicio' %}">Inicio</a> |
+        <a href="{% url 'registrar_visita' %}">Registrar Nueva Visita</a>
+    </nav>
+
+    {% if visitas %}
+        <ul>
+            {% for visita in visitas %}
+                <li>
+                    {{ visita.nombre }} - {{ visita.motivo }} - {{ visita.fecha }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay visitas registradas.</p>
+    {% endif %}
+</body>
+</html>

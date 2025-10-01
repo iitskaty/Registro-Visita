@@ -56,7 +56,7 @@ ROOT_URLCONF = 'Registro.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'Registro' / 'templates'],
+        'DIRS': [],  # vacio porque usaremos APP_DIRS=True
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,6 +68,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 
 WSGI_APPLICATION = 'Registro.wsgi.application'
