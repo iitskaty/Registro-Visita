@@ -1,18 +1,64 @@
 {% extends 'base.html' %}
 {% block content %}
 <h2>Lista de Visitas</h2>
+
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 10px 15px;
+        text-align: left;
+    }
+    th {
+        background-color: #f5c6e7; /* un rosa pastel suave */
+        color: #333;
+    }
+    tr:nth-child(even) {
+        background-color: #f9f0f9;
+    }
+    tr:hover {
+        background-color: #f1e0f5;
+    }
+    .btn {
+        padding: 5px 10px;
+        background-color: #ff69b4;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-right: 5px;
+        font-size: 0.9em;
+    }
+    .btn:hover {
+        background-color: #ff4fa1;
+    }
+    .btn-eliminar {
+        background-color: #ff4c4c;
+    }
+    .btn-eliminar:hover {
+        background-color: #e60000;
+    }
+</style>
+
 <table>
     <tr>
-        <th>ID</th>
+        <th>Rut</th>
         <th>Nombre</th>
         <th>Motivo</th>
+        <th>Fecha</th>
         <th>Acciones</th>
     </tr>
     {% for visita in visitas %}
     <tr>
-        <td>{{ visita.id }}</td>
+        <td>{{ visita.rut }}</td>
         <td>{{ visita.nombre }}</td>
         <td>{{ visita.motivo }}</td>
+        <td>{{ visita.fecha_de_visita }}</td>
         <td>
             <a class="btn" href="{% url 'visitas_editar' visita.id %}">Editar</a>
             <a class="btn btn-eliminar" href="{% url 'visitas_eliminar' visita.id %}">Eliminar</a>

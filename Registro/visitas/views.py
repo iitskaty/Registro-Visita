@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Visita
-from .forms import VisitaForm  # Asumiendo que tienes un formulario VisitaForm
+from .forms import VisitaForm
 
-# Inicio visita
+# Inicio / Lista de visitas
 def inicio(request):
     visitas = Visita.objects.all()
     return render(request, 'lista.html', {'visitas': visitas})
@@ -18,7 +18,7 @@ def registrar_visita(request):
         form = VisitaForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('visitas_lista')
+            return redirect('lista_visitas')
     else:
         form = VisitaForm()
     return render(request, 'registrar.html', {'form': form})
@@ -30,7 +30,7 @@ def editar_visita(request, id):
         form = VisitaForm(request.POST, instance=visita)
         if form.is_valid():
             form.save()
-            return redirect('visitas_lista')
+            return redirect('lista_visitas')
     else:
         form = VisitaForm(instance=visita)
     return render(request, 'editar.html', {'form': form})
@@ -39,4 +39,4 @@ def editar_visita(request, id):
 def eliminar_visita(request, id):
     visita = get_object_or_404(Visita, id=id)
     visita.delete()
-    return redirect('visitas_lista')
+    return redirect('lista_visitas')

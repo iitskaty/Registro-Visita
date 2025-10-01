@@ -6,10 +6,12 @@
     {% csrf_token %}
     <label>Nombre:</label><br>
     {{ form.nombre }}<br><br>
+    <label>RUT:</label><br>
+    {{ form.rut}}<br><br>
     <label>Motivo:</label><br>
     {{ form.motivo }}<br><br>
     <label>Fecha:</label><br>
-    {{ form.fecha }}<br><br>
+    {{ form.fecha_de_visita }}<br><br>
     <button type="submit" style="background-color:#a8d5ba; color:white; padding:8px 16px; border:none; border-radius:5px;">Registrar</button>
 </form>
 {% endblock %}
