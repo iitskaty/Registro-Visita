@@ -19,10 +19,10 @@ from django.urls import path, include
 from visitas import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('visitas/', include('visitas.urls')),
-    path('', views.inicio, name='inicio'),  # Página de inicio por defecto
+    path('', views.lista_visitas, name='inicio'),  # Usar lista_visitas como página principal
+    path('visitas/', include('visitas.urls')),    # Incluye las URLs de la app visitas
 ]
+
 
 
 

@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Página de Inicio</title>
-</head>
-<body>
-    <h1>Bienvenido al Sistema de Registro de Visitas</h1>
-    <nav>
-        <ul>
-            <li><a href="{% url 'inicio' %}">Inicio</a></li>
-            <li><a href="{% url 'lista_visitas' %}">Lista de Visitas</a></li>
-            <li><a href="{% url 'registrar_visita' %}">Registrar Visita</a></li>
-        </ul>
-    </nav>
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+<div class="text-center">
+    <div class="card p-5">
+        <h1 class="mb-4">Bienvenido al Registro de Visitas</h1>
+        <p class="lead">Aquí podrás registrar, editar y consultar tus visitas de manera sencilla.</p>
+        <a href="{% url 'registrar_visita' %}" class="btn btn-pastel mt-3">Registrar Nueva Visita</a>
+    </div>
+</div>
+{% endblock %}

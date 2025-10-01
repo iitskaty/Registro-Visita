@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Eliminar Visita</h2>
+<p>¿Estás seguro que deseas eliminar la visita de <strong>{{ visita.rut }}</strong>?</p>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit">Sí, eliminar</button>
+</form>
+<a href="{% url 'visitas_lista' %}">Cancelar</a>
+{% endblock %}
