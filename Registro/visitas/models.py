@@ -3,7 +3,7 @@ from django.utils import timezone
 
 class Visita(models.Model):
     nombre = models.CharField(max_length=100)
-    rut = models.CharField(max_length=12)
+    rut = models.CharField(max_length=12, unique=True)
     motivo = models.TextField()
     fecha_de_visita = models.DateField(default=timezone.now)
 

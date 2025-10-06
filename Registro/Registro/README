@@ -1,0 +1,65 @@
+# Registro de Visitas
+
+Este proyecto es una aplicación web desarrollada con Django para registrar y gestionar visitas. Permite agregar, listar, editar y ver detalles de las visitas realizadas.
+
+## ¿Cómo funciona el código?
+
+### 1. Modelos (`models.py`)
+Define la estructura de los datos de una visita:
+- **nombre:** Nombre del visitante.
+- **rut:** RUT del visitante (solo números, único).
+- **motivo_de_visita:** Motivo de la visita (solo letras y espacios).
+- **fecha_de_visita:** Fecha de la visita.
+
+### 2. Formularios (`forms.py`)
+Utiliza un `ModelForm` llamado `VisitaForm` para crear y validar los formularios basados en el modelo `Visita`.
+
+### 3. Vistas (`views.py`)
+- **nueva_visita:** Muestra el formulario para agregar una nueva visita. Si el formulario es válido, guarda la visita y redirige a la lista de visitas.
+- **lista_visitas:** Muestra todas las visitas registradas.
+
+### 4. Plantillas (`templates/Sistema/nueva_visita.html`)
+- Muestra el formulario de registro de visitas.
+- Aplica restricciones en el navegador:
+  - El campo **RUT** solo permite números y es más grande.
+  - El campo **Motivo de visita** solo permite letras y espacios y es más pequeño.
+- Muestra mensajes de error si los datos no son válidos.
+- Incluye botones para cancelar o guardar la visita.
+
+### 5. Flujo de trabajo
+1. El usuario accede a la página de nueva visita.
+2. Completa el formulario y lo envía.
+3. Django valida los datos:
+   - Si son correctos, guarda la visita y redirige a la lista.
+   - Si hay errores, los muestra en el formulario.
+4. El usuario puede ver la lista de visitas, editar o ver detalles de cada una.
+
+## Requisitos
+
+- Python 3.x
+- Django
+
+## Instalación
+
+1. Clona el repositorio.
+2. Instala las dependencias con `pip install django`.
+3. Ejecuta las migraciones:
+   ```
+   python manage.py makemigrations
+   python manage.py migrate
+   ```
+4. Inicia el servidor:
+   ```
+   python manage.py runserver
+   ```
+
+## Uso
+
+- Accede a `/visitas/` para ver la lista de visitas.
+- Haz clic en "Nueva Visita" para registrar una nueva.
+- Completa el formulario y guarda.
+
+---
+
+**Nota:**  
+Las validaciones de solo números y solo letras se aplican en el navegador, pero también puedes reforzarlas en el formulario de Django si lo deseas.
