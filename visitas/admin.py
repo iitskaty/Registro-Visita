@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+
+
+
+
+
+
+# Debes de agregar: filtros por fecha, búsqueda por RUT, acciones masivas (marcar salida).
