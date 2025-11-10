@@ -2,7 +2,11 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Visita
 from .forms import VisitaForm
 
-# Inicio / Lista de visitas
+
+
+
+
+
 def inicio(request):
     visitas = Visita.objects.all()
     return render(request, 'lista.html', {'visitas': visitas})
