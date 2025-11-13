@@ -4,6 +4,6 @@ openpyxl>=3.1.2
 python-dotenv
 psycopg2
 djangorestframework
-
+djangorestframework-simplejwt
 
 whitenoise
